@@ -1,10 +1,8 @@
-# motor-gateway-linux
+# gateway-linux
 
-由 Keil/STM32 HAL/FreeRTOS 工程移植而来的 Linux 版智能网关。
+Linux 版智能网关。
 
-目标：**保持对外协议行为不变**，把调度改为 Linux 单进程多线程，去掉 Keil、STM32 HAL、W5500 硬件协议栈和 FreeRTOS。
-
-## 对外协议（与原工程一致）
+## 对外协议
 
 | 方向 | 通道 | 内容 |
 |---|---|---|
@@ -141,4 +139,4 @@ make CC=clang CFLAGS="-O0 -g" -j4
 - 使用 GCC 15.2.0 以 `-Wall -Wextra` 编译通过，无警告。
 - AddressSanitizer + UBSan 冒烟测试通过，无内存/未定义行为报告。
 - `SIGINT` 可正常退出，返回码 0。
-- 已使用根目录 `Makefile` 完成全量编译验证；当前环境未安装 `mosquitto`，真实 Broker 联调未在本机执行。
+- 已使用根目录 `Makefile` 完成全量编译验证；
